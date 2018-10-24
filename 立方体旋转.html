@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .wrapper {
+            width: 300px;
+            height: 300px;
+            border: 1px solid #000;
+            perspective: 600px;
+        }
+        .box{
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            width: 200px;
+            height: 200px;
+            transform-style: preserve-3d;
+            animation: turn 5s linear infinite;
+            font-size: 30px;
+            color: #fff;
+        }
+
+        .item{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            opacity: 0.5;
+            text-align: center;
+            line-height: 200px;
+        }
+        .item1{
+            background: red;
+            transform: translateZ(100px);
+        }
+        .item2{
+            background: green;
+            transform: rotate3d(1,0,0,90deg) translateZ(100px);
+        }
+        .item3{
+            background: deeppink;
+            transform: rotate3d(1,0,0,180deg) translateZ(100px);
+        }
+        .item4{
+            background: deepskyblue;
+            transform: rotate3d(1,0,0,-90deg) translateZ(100px);
+        }
+        .item5{
+            background: orange;
+            transform: rotate3d(0,1,0,90deg) translateZ(100px);
+        }
+        .item6{
+            background: #333;
+            transform: rotate3d(0,1,0,-90deg) translateZ(100px);
+        }
+
+        @keyframes turn {
+            0%{
+                transform: rotateX(0) rotateY(0) rotateZ(0);
+            }
+            100%{
+                transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="box">
+            <div class="item item1">1</div>
+            <div class="item item2">2</div>
+            <div class="item item3">3</div>
+            <div class="item item4">4</div>
+            <div class="item item5">5</div>
+            <div class="item item6">6</div>
+        </div>
+        
+    </div>
+</body>
+</html>
